@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final Image product_image;
   final Text product_text;
- 
+  final Text product_desc;
+
   final Widget click;
 
   final Text product_price;
@@ -11,10 +12,9 @@ class ProductCard extends StatelessWidget {
     Key? key,
     required this.product_image,
     required this.product_text,
-   
     required this.product_price,
     required this.click,
-
+    required this.product_desc,
   }) : super(key: key);
 
   @override
@@ -44,10 +44,10 @@ class ProductCard extends StatelessWidget {
           ),
           Center(child: product_price),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
+          Center(child: product_desc),
           click,
-         
         ],
       ),
     );

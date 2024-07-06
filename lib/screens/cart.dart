@@ -12,6 +12,7 @@ class CartView extends StatefulWidget {
 
 class _CartViewState extends State<CartView> {
   late List _cartItems;
+  final img = "http://api.timbu.cloud/images/";
 
   @override
   void initState() {
@@ -33,8 +34,11 @@ class _CartViewState extends State<CartView> {
 
   double getTotalPrice() {
     double total = 0.0;
+
+    ;
     for (var item in _cartItems) {
-      total += double.tryParse(item['price']) ?? 0.0;
+      total +=
+          double.tryParse(item['current_price'][0]['NGN'][0].toString()) ?? 0.0;
     }
     return total;
   }
@@ -81,14 +85,26 @@ class _CartViewState extends State<CartView> {
                 ? ListView.builder(
                     itemCount: _cartItems.length,
                     itemBuilder: (context, index) {
+                      var product = _cartItems[index];
+                      final priceList = product['current_price'];
+                      String price = 'Price not available';
+                      if (priceList != null && priceList.isNotEmpty) {
+                        final ngnPrices = priceList[0]['NGN'];
+                        if (ngnPrices != null && ngnPrices.isNotEmpty) {
+                          price = 'NGN ${ngnPrices[0].toString()}';
+                        }
+                      }
+
                       return ListTile(
-                        leading: Image.network(_cartItems[index]["image"]),
-                        title: Text(_cartItems[index]["name"]),
-                        subtitle: Text('\$${_cartItems[index]["price"]}'),
+                        leading: Image.network(
+                          img + product['photos'][0]['url'],
+                        ),
+                        title: Text(product['name'] ?? 'No Name'),
+                        subtitle: Text(price),
                         trailing: IconButton(
                           icon: Icon(Icons.remove_circle),
                           onPressed: () {
-                            removeFromCart(_cartItems[index]);
+                            removeFromCart(product);
                           },
                         ),
                       );

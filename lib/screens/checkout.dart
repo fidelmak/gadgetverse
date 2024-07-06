@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gadgetverse/model/home_page.dart';
+import 'package:gadgetverse/screens/home.dart';
+import 'package:gadgetverse/screens/home_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   final double totalPrice;
@@ -39,7 +40,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => UseApp(),
+                    builder: (context) => HomeScreen(),
                   ),
                 );
               },

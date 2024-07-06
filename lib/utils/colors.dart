@@ -20,3 +20,15 @@ Color textBlack = Colors.black;
 Color textWhite = Colors.white;
 Color textBlue = Colors.blue;
 Color textGrey = Colors.grey.shade400;
+
+Color backgroundColor = Color(0xFF121420);
+const Color cardColor = Color(0xFF1B1D2A);
+
+const Color whiteColor = Colors.white;
+
+//Color.fromARGB(221, 247, 235, 235); Color(0xFFFAFAFE);
+
+const Color primaryColor = Color(0xFF1545C6);
+const Color secondary = const Color.fromARGB(255, 0, 19, 34);
+const Color bg = Color.fromARGB(255, 243, 252, 255);//Color(0xFFFAFFFE);
+

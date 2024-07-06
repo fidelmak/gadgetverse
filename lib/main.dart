@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'model/home_page.dart';
+import 'screens/home.dart';
+import 'screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GadgetVerse',
-      home: SafeArea(child: UseApp()),
+      home: SafeArea(child: HomeScreen()),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/home_page.dart';
+import '../screens/home_page.dart';
 import '../screens/cart.dart';
 import '../screens/checkout.dart';
 
@@ -47,7 +47,7 @@ class _BottomNavState extends State<BottomNav> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => UseApp(),
+                          builder: (context) => HomePage(),
                         ),
                       );
                     },

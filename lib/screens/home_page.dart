@@ -7,18 +7,19 @@ import '../components/bottom_nav.dart';
 import '../components/category.dart';
 import '../components/product_card.dart';
 import '../components/products.dart';
-import '../const/colors.dart';
-import '../screens/cart.dart';
+import '../utils/colors.dart';
+import '../service/service.dart';
+import 'cart.dart';
 
 // Homepage declaring a stateful widget
-class UseApp extends StatefulWidget {
-  const UseApp({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<UseApp> createState() => _UseAppState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _UseAppState extends State<UseApp> {
+class _HomePageState extends State<HomePage> {
   List _items = [];
   List _addedItems = [];
 
@@ -38,6 +39,8 @@ class _UseAppState extends State<UseApp> {
     });
   }
 
+  Service useService = Service();
+
   Future<void> fetchProducts() async {
     final String response = await rootBundle.loadString('assets/data.json');
     final data = await json.decode(response);
@@ -49,7 +52,8 @@ class _UseAppState extends State<UseApp> {
   @override
   void initState() {
     super.initState();
-    fetchProducts();
+    //fetchProducts();
+    useService.fetchProducts();
   }
 
   @override
@@ -130,6 +134,7 @@ class _UseAppState extends State<UseApp> {
                                 ),
                                 child: Text("Add"),
                               ),
+                              product_desc: Text("Add"),
                             ),
                           ),
                         );
