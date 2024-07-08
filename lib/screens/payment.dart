@@ -3,15 +3,8 @@ import 'package:gadgetverse/screens/home.dart';
 import 'package:provider/provider.dart';
 
 import '../controller/controller.dart';
-import 'payment.dart';
 
-class CheckoutPage extends StatelessWidget {
-  final double totalPrice;
-  final List productItems;
-
-  const CheckoutPage(
-      {super.key, required this.totalPrice, required this.productItems});
-
+class PaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -28,10 +21,22 @@ class CheckoutPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Center(
+                  child: Container(
+                    height: screenHeight / 4,
+                    width: screenWidth / 1.2,
+                    child: Image.asset(
+                      "assets/images/pay.jpg",
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
                 Text(
-                  'Price to Check-Out:\n NGN ${totalPrice.toStringAsFixed(2)}',
+                  'Accept Payment Request',
                   style: TextStyle(fontSize: 24),
                 ),
+                SizedBox(height: 20),
                 SizedBox(height: 20),
                 Container(
                   width: screenWidth / 1.5,
@@ -44,10 +49,19 @@ class CheckoutPage extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      productModel.handleCheckout(context);
+                      productModel.clearAllCart(context);
+
+                      Future.delayed(Duration(seconds: 1), () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
+                      });
                     },
                     child: Text(
-                      "Make Payment",
+                      "Proceed",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),

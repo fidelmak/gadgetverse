@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  final Image product_image;
+  final Widget product_image;
   final Text product_text;
   final Text product_desc;
 
@@ -28,7 +28,7 @@ class ProductCard extends StatelessWidget {
         color: Colors.white,
       ),
       height: screenHeight / 2,
-      width: screenWidth / 2,
+      width: screenWidth / 1.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -46,7 +46,10 @@ class ProductCard extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Center(child: product_desc),
+          Expanded(child: Center(child: product_desc)),
+          SizedBox(
+            height: 20,
+          ),
           click,
         ],
       ),

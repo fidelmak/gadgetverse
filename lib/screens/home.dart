@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
-
 import '../components/bottom_nav.dart';
 import '../components/category.dart';
 import '../components/nav_bar.dart';
@@ -40,16 +38,22 @@ class HomeScreen extends StatelessWidget {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   var product = snapshot.data![index];
-                  print(product);
+
                   final priceList = product['current_price'];
                   String price = 'Price not available';
-                  final productId = product["id"];
+                  //final productId = product["id"];
 
                   if (priceList != null && priceList.isNotEmpty) {
                     final ngnPrices = priceList[0]['NGN'];
                     if (ngnPrices != null && ngnPrices.isNotEmpty) {
                       price = 'NGN ${ngnPrices[0].toString()}';
                     }
+                  }
+
+                  String imageUrl = '';
+                  if (product['photos'] != null &&
+                      product['photos'].isNotEmpty) {
+                    imageUrl = productModel.img + product['photos'][0]['url'];
                   }
 
                   return SingleChildScrollView(
@@ -70,11 +74,20 @@ class HomeScreen extends StatelessWidget {
                         categoryFunction2: () {},
                       ),
                       card1: ProductCard(
-                        product_image: Image.network(
-                          productModel.img + product['photos'][0]['url'],
-                          height: screenHeight / 4,
-                          fit: BoxFit.cover,
-                        ),
+                        product_image: imageUrl.isNotEmpty
+                            ? Image.network(
+                                imageUrl,
+                                height: screenHeight / 4,
+                                width: screenWidth / 1.2,
+                                fit: BoxFit.contain,
+                              )
+                            : Container(
+                                height: screenHeight / 4,
+                                color: Colors.grey,
+                                child: const Center(
+                                  child: Text('No Image Available'),
+                                ),
+                              ),
                         product_text: Text(
                           product['name'] ?? 'No Name',
                           style: TextStyle(
@@ -85,15 +98,14 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
-                        product_desc: Text(
-                            ""), // Text(product['description'] ?? 'No Description'),
+                        product_desc:
+                            Text(product['description'] ?? 'No Description'),
                         click: SizedBox(
                           width: 100.0,
                           height: 50.0,
                           child: TextButton(
                             onPressed: () {
-                              productModel.productView(productId, context);
-                              //productModel.addToCart(product, context);
+                              productModel.addToCart(product, context);
                             },
                             style: TextButton.styleFrom(
                               foregroundColor: Colors.white,

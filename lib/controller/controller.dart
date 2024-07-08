@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gadgetverse/screens/payment.dart';
 import 'package:intl/intl.dart';
 import '../screens/checkout.dart';
 import '../screens/home.dart';
-import '../screens/product_dtails.dart';
+
 import '../service/service.dart';
 
 class ProductModel with ChangeNotifier {
@@ -30,7 +31,7 @@ class ProductModel with ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('${product['name']} added to cart'),
-          duration: Duration(seconds: 2),
+          duration: Duration(seconds: 1),
         ),
       );
       notifyListeners();
@@ -75,7 +76,7 @@ class ProductModel with ChangeNotifier {
     _cartItems.clear();
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('All items removed from cart'),
+        content: Text('Payment Successful'),
         duration: Duration(seconds: 2),
       ),
     );
@@ -87,9 +88,8 @@ class ProductModel with ChangeNotifier {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Checkout Successful"),
-          content: Text(
-              "Price Checked Out: \$${getTotalPrice().toStringAsFixed(2)}"),
+          title: Text("Successfully Processed! "),
+          content: Text("Click OK and proceed to confirm"),
           actions: <Widget>[
             TextButton(
               child: Text("OK"),
@@ -97,7 +97,7 @@ class ProductModel with ChangeNotifier {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => PaymentPage(),
                   ),
                 );
               },
@@ -105,15 +105,6 @@ class ProductModel with ChangeNotifier {
           ],
         );
       },
-    );
-  }
-
-  productView(String id, context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ProductDetails(),
-      ),
     );
   }
 

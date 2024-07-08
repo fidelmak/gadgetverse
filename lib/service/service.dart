@@ -27,18 +27,17 @@ class Service {
     }
   }
 
-  Future<List<dynamic>> fetchProduct() async {
-    final productId;
+  Future<List<dynamic>> fetchProduct(id) async {
+    final productId = id;
     try {
       var response = await http.get(
         Uri.parse(
-            '$baseUrl?Apikey=$apiKey&organization_id=$orgId&Appid=$appId'),
+            '$baseUrl/$productId?Apikey=$apiKey&organization_id=$orgId&Appid=$appId'),
       );
 
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-
-        return data['items']["id"]; // Returning the list of items
+        return data['items']; // Returning the list of items
       } else {
         print('Request failed with status: ${response.statusCode}');
         return [];
