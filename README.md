@@ -57,4 +57,4 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 ## View on Appetize
 **Appetize**
 
-*Interact with the website using this link:* [Appetize](https://appetize.io/app/android/com.example.gadgetverse?device=pixel7&osVersion=13.0)
+*Interact with the website using this link:* [Appetize](https://appetize.io/app/b_xtbv5rnvgukscf2fke2isz5pny)
