@@ -17,7 +17,7 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 - **MVC Architecture**: Seamless integration of the MVC (Model-View-Controller) architecture for clean and maintainable code.
 
 ## Installation
-- **Download the app**: Available on [Google Drive](https://drive.google.com/file/d/1eyExb27JgOwGoY4QHiXGzBtFUq84s7Wx/view?usp=drive_link).
+- **Download the app**: Available on [Google Drive](https://drive.google.com/drive/folders/16BAjMemZLMSYpd4BYOumm1o_4ukn93Mo).
 
 ## Usage
 
