@@ -34,14 +34,16 @@ class HomeScreen extends StatelessWidget {
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return Center(child: Text('No products found.'));
+              return Center(child: Text('No products available.'));
             } else {
               return ListView.builder(
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   var product = snapshot.data![index];
+                  print(product);
                   final priceList = product['current_price'];
                   String price = 'Price not available';
+                  final productId = product["id"];
 
                   if (priceList != null && priceList.isNotEmpty) {
                     final ngnPrices = priceList[0]['NGN'];
@@ -70,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                       card1: ProductCard(
                         product_image: Image.network(
                           productModel.img + product['photos'][0]['url'],
+                          height: screenHeight / 4,
                           fit: BoxFit.cover,
                         ),
                         product_text: Text(
@@ -89,7 +92,8 @@ class HomeScreen extends StatelessWidget {
                           height: 50.0,
                           child: TextButton(
                             onPressed: () {
-                              productModel.addToCart(product, context);
+                              productModel.productView(productId, context);
+                              //productModel.addToCart(product, context);
                             },
                             style: TextButton.styleFrom(
                               foregroundColor: Colors.white,

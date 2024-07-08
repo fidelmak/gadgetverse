@@ -10,12 +10,35 @@ class Service {
   Future<List<dynamic>> fetchProducts() async {
     try {
       var response = await http.get(
-        Uri.parse('$baseUrl?Apikey=$apiKey&organization_id=$orgId&Appid=$appId'),
+        Uri.parse(
+            '$baseUrl?Apikey=$apiKey&organization_id=$orgId&Appid=$appId&size=10'),
       );
 
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data['items']; // Returning the list of items
+      } else {
+        print('Request failed with status: ${response.statusCode}');
+        return [];
+      }
+    } catch (e) {
+      print('Error: $e');
+      return [];
+    }
+  }
+
+  Future<List<dynamic>> fetchProduct() async {
+    final productId;
+    try {
+      var response = await http.get(
+        Uri.parse(
+            '$baseUrl?Apikey=$apiKey&organization_id=$orgId&Appid=$appId'),
+      );
+
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+
+        return data['items']["id"]; // Returning the list of items
       } else {
         print('Request failed with status: ${response.statusCode}');
         return [];

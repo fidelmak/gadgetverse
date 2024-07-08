@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../screens/checkout.dart';
 import '../screens/home.dart';
+import '../screens/product_dtails.dart';
 import '../service/service.dart';
 
 class ProductModel with ChangeNotifier {
@@ -104,6 +105,15 @@ class ProductModel with ChangeNotifier {
           ],
         );
       },
+    );
+  }
+
+  productView(String id, context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProductDetails(),
+      ),
     );
   }
 

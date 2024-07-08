@@ -11,7 +11,7 @@ import '../controller/controller.dart';
 import '../utils/colors.dart';
 import '../service/service.dart';
 
-class HomeScreen extends StatelessWidget {
+class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           child: ProfileNav(screenWidth: screenWidth),
         ),
         body: FutureBuilder<List<dynamic>>(
-          future: context.read<ProductModel>().productsService.fetchProducts(),
+          future: context.read<ProductModel>().productsService.fetchProduct(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
