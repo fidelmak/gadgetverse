@@ -32,7 +32,7 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 
 ## Screenshots
 ## HomePage
-<img src="assets/images/home.png" alt="Example Image" width="500" height="1000"/>
+<img src="assets/images/Home.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
