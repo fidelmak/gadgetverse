@@ -49,6 +49,7 @@ class CartView extends StatelessWidget {
                               icon: Icon(Icons.remove_circle),
                               onPressed: () {
                                 productModel.removeFromCart(product, context);
+                                productModel.decrement();
                               },
                             ),
                           );

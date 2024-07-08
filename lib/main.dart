@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       create: (context) => ProductModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'GadgetVerse',
+        title: 'GadgetVerse', // title of the app
         home: SafeArea(child: HomeScreen()),
       ),
     );

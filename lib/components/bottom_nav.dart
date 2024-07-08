@@ -4,15 +4,18 @@ import 'package:provider/provider.dart';
 import '../screens/home.dart';
 import '../screens/cart.dart';
 import '../screens/checkout.dart';
-import '../controller/controller.dart'; // Import your ProductModel
+import '../controller/controller.dart';
 
+// bottom nav bar 
 class BottomNav extends StatelessWidget {
+  const BottomNav({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductModel>(builder: (context, productModel, child) {
       return Container(
         padding: EdgeInsets.symmetric(vertical: 10),
-        color: Colors.white,
+        color: Colors.white, // custom color 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -25,7 +28,7 @@ class BottomNav extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
+                          builder: (context) => HomeScreen(),// navigating to the home screen 
                         ),
                       );
                     },
@@ -38,21 +41,7 @@ class BottomNav extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_outline),
-                  ),
-                  Text(
-                    'Wishlist',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
+            // button icons with text
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

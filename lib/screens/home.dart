@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Consumer<ProductModel>(builder: (context, productModel, child) {
       return Scaffold(
         bottomNavigationBar: BottomNav(),
-        backgroundColor: textWhite,
+        backgroundColor: textGrey,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(50.0),
           child: ProfileNav(screenWidth: screenWidth),
@@ -106,6 +106,7 @@ class HomeScreen extends StatelessWidget {
                           child: TextButton(
                             onPressed: () {
                               productModel.addToCart(product, context);
+                              productModel.increment();
                             },
                             style: TextButton.styleFrom(
                               foregroundColor: Colors.white,
@@ -117,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                               overlayColor: MaterialStateProperty.all<Color>(
                                   Colors.black),
                             ),
-                            child: Text("View"),
+                            child: Text("Add "),
                           ),
                         ),
                       ),

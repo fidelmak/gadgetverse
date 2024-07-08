@@ -50,6 +50,7 @@ class PaymentPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       productModel.clearAllCart(context);
+                      productModel.delCounter();
 
                       Future.delayed(Duration(seconds: 1), () {
                         Navigator.push(

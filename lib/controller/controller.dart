@@ -71,7 +71,7 @@ class ProductModel with ChangeNotifier {
     );
   }
 
-  // Method to clear all items in the cart
+  //  clear all items in the cart
   clearAllCart(BuildContext context) {
     _cartItems.clear();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -80,7 +80,7 @@ class ProductModel with ChangeNotifier {
         duration: Duration(seconds: 2),
       ),
     );
-    notifyListeners(); // Notify listeners after state change
+    notifyListeners(); 
   }
 
   handleCheckout(BuildContext context) {
@@ -109,6 +109,7 @@ class ProductModel with ChangeNotifier {
   }
 
   int _counter = 0;
+  get counter => _counter;
   void increment() {
     _counter++;
     notifyListeners();
@@ -121,5 +122,12 @@ class ProductModel with ChangeNotifier {
     }
   }
 
-  int get currentCount => _counter;
+  void delCounter() {
+    if (_counter > 0) {
+      _counter = 0;
+      notifyListeners();
+    }
+  }
+
+ 
 }
