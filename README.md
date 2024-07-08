@@ -37,6 +37,11 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 <br />
 <br />
 <br />
+<img src="assets/images/products.png" alt="Example Image" width="500" height="1000"/>
+<br />
+<br />
+<br />
+<br />
 
 ## Cart Page
 <img src="assets/images/cart.png" alt="Example Image" width="500" height="1000"/>
