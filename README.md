@@ -32,28 +32,22 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 
 ## Screenshots
 ## HomePage
-<img src="assets/images/homepage.png" alt="Example Image" width="500" height="1000"/>
+<img src="assets/images/home.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
 <br />
 
 ## Cart Page
-<img src="assets/images/addedtocart.png" alt="Example Image" width="500" height="1000"/>
+<img src="assets/images/cart.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
 <br />
 <br />
-## Check-Out Page with Price
-<img src="assets/images/checkoutpage.png" alt="Example Image" width="500" height="1000"/>
-<br />
-<br />
-<br />
-<br />
-<br />
+
 ## Payment Page
-<img src="assets/images/checkoutsucces.png" alt="Example Image" width="500" height="1000"/> 
+<img src="assets/images/payment.png" alt="Example Image" width="500" height="1000"/> 
 
 ## View on Appetize
 **Appetize**
