@@ -31,28 +31,28 @@ Welcome to **GadgetVerse** – Your ultimate mobile shopping solution! GadgetVer
 4. **Checkout**: Proceed to checkout by entering your shipping details.
 
 ## Screenshots
-### HomePage
+## HomePage
 <img src="assets/images/homepage.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
 <br />
 
-### Cart Page
+## Cart Page
 <img src="assets/images/addedtocart.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
 <br />
 <br />
-### Check-Out Page with Price
+## Check-Out Page with Price
 <img src="assets/images/checkoutpage.png" alt="Example Image" width="500" height="1000"/>
 <br />
 <br />
 <br />
 <br />
 <br />
-### Payment Page
+## Payment Page
 <img src="assets/images/checkoutsucces.png" alt="Example Image" width="500" height="1000"/> 
 
 ## View on Appetize
